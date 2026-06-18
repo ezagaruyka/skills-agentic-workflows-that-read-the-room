@@ -29,8 +29,8 @@ Read `notes/mona-notes.md` before making any content updates.
 
 Use these sources:
 - `notes/mona-notes.md`
-- `https://github.blog/latest/`
-- `https://github.blog/changelog/`
+- GitHub Blog: `https://github.blog/latest/`
+- GitHub Changelog: `https://github.blog/changelog/`
 
 Update `site/content/github-info.md` with concise, reader-friendly GitHub updates sourced from the GitHub Blog and GitHub Changelog.
 Mention the source of each update and keep summaries practical for developers.
