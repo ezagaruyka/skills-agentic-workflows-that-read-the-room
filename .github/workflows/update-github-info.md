@@ -1,41 +1,40 @@
 ---
 name: update-github-info
-description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
+description: Draft Mona website updates from official GitHub sources and propose them as a pull request.
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 9 * * *'
 permissions:
   contents: read
-  issues: read
-  pull-requests: read
 tools:
   edit: {}
   web-fetch: {}
 safe-outputs:
   create-pull-request:
-    title-prefix: "[Mona GitHub Info]"
+    title-prefix: "[Mona website] "
     draft: true
     fallback-as-issue: false
 network:
   allowed:
     - defaults
+    - github.com
     - github.blog
 ---
 
-# Update GitHub Info content
+# Update Mona's GitHub Info website
 
-Read `notes/mona-notes.md` before making any content updates.
+Read `notes/mona-notes.md` first, and use the following sources for updates:
 
-Use these sources:
 - `notes/mona-notes.md`
-- GitHub Blog: `https://github.blog/latest/`
-- GitHub Changelog: `https://github.blog/changelog/`
+- GitHub Blog: https://github.blog/latest/
+- GitHub Changelog: https://github.blog/changelog/
 
-Update `site/content/github-info.md` with concise, reader-friendly GitHub updates sourced from the GitHub Blog and GitHub Changelog.
-Mention the source of each update and keep summaries practical for developers.
+Update `site/content/github-info.md` with concise, practical content that reflects the latest GitHub Blog and GitHub Changelog updates.
 
-If there is nothing new or no actionable website update, call `noop` with a short reason.
+Use the `edit` tool to modify the local file and `web-fetch` to retrieve live content from GitHub Blog and GitHub Changelog.
+
+Open a pull request for Mona to review using `safe-outputs` with `create-pull-request`.
 Do not write directly to `main`.
-Use `safe-outputs` with `create-pull-request` so changes are proposed in a PR for Mona to review.
-Open a pull request with a title that mentions Mona or GitHub Info.
+
+If there is nothing new to update, call `noop` with a clear reason.
