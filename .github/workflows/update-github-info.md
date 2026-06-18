@@ -20,6 +20,7 @@ network:
     - defaults
     - github.com
     - github.blog
+    - awesome-copilot.github.com
 ---
 
 # Update Mona's GitHub Info website
@@ -29,10 +30,11 @@ Read `notes/mona-notes.md` first, and use the following sources for updates:
 - `notes/mona-notes.md`
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
+- Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
-Update `site/content/github-info.md` with concise, practical content that reflects the latest GitHub Blog and GitHub Changelog updates.
+Update `site/content/github-info.md` with concise, practical content that reflects the latest GitHub Blog, GitHub Changelog, and Awesome Copilot workflows updates.
 
-Use the `edit` tool to modify the local file and `web-fetch` to retrieve live content from GitHub Blog and GitHub Changelog.
+Use the `edit` tool to modify the local file and `web-fetch` to retrieve live content from GitHub Blog, GitHub Changelog, and Awesome Copilot workflows.
 
 Open a pull request for Mona to review using `safe-outputs` with `create-pull-request`.
 Do not write directly to `main`.
